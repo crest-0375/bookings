@@ -8,9 +8,9 @@ import (
 )
 
 func TestRoutes(t *testing.T) {
-	var app config.AppConfig
+	var _ config.AppConfig
 
-	mux := routes(&app)
+	mux := routes()
 
 	switch v := mux.(type) {
 	case *chi.Mux:

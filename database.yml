@@ -1,0 +1,13 @@
+development:
+  dialect: postgres
+  database: postgres
+  user: postgres
+  password: 321654
+  host: 127.0.0.1
+  pool: 5
+
+test:
+  url: {{envOr "TEST_DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:8000/myapp_test"}}
+
+production:
+  url: {{envOr "DATABASE_URL" "postgres://postgres:postgres@127.0.0.1:8000/myapp_production"}}
